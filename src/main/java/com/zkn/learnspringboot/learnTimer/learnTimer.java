@@ -13,6 +13,7 @@ import java.util.Date;
  * @author: lxh
  * @create: 2018-03-12 16:59
  **/
+// 类上@Component注解和方法上@Scheduled不能少, cron表达式可以网上在线解析
 @Component
 public class learnTimer {
     @Scheduled(cron = "0/5 * *  * * ? ")   //每5秒执行一次
