@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  *
  * @desc <ul>
  * <li>
- * @RestController注解相当于@Controller和@ResponseBody注解的结合。
+ * @RestController注解相当于@Controller和@ResponseBody注解的结合。1
  * @ResponseBody注解：异步请求或者不需要返回页面的注解。 </li>
  * <li>
  * @RestController和@RequestMapping是SpringMVC的注解。 </li>
