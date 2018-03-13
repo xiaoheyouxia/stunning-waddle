@@ -6,6 +6,7 @@ import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletCont
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -28,8 +29,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @RestController
 @EnableAutoConfiguration
+@EnableScheduling
 //@ImportResource(locations = {"classpath:dubbo-provider.xml"})
-@ComponentScan
+@ComponentScan("com.zkn.learnspringboot")
 @EnableSwagger2
 public class FirstExample implements EmbeddedServletContainerCustomizer {
 
