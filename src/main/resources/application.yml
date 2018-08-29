@@ -1,0 +1,50 @@
+# 从配置文件中取值的测试
+boot:
+    number: ${random.int}
+    secret: ${random.value}
+
+# 上传文件类型限制
+fileupload:
+    allowFileType: txt,docs
+
+# 日志文件级别,日志文件输出地址
+logging:
+    level:
+        root: info
+    path: /temp/logs
+
+# 用户信息测试
+person:
+    id: 1
+    passWord: 123
+    userName: zhaojigang
+
+# redis超时时间
+redis:
+    maxActive: 600
+    maxIdle: 300
+    maxWait: 1000
+    serverName: 127.0.0.1:6379
+    testOnBorrow: true
+    timeout: 8
+
+# 端口号
+server:
+    port: 8004
+
+# spring框架配置
+# 环境选择
+# 不缓存页面
+spring:
+    profiles:
+        active: dev
+    thymeleaf:
+        cache: false
+
+#连接池配置
+spring.datasource.type: com.alibaba.druid.pool.DruidDataSource
+
+#mybatis
+mybatis:
+    type-aliases-package: com.zkn.learnspringboot.entity
+    mapper-locations: classpath*:/mappers/*Mapper.xml

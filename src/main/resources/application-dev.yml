@@ -1,0 +1,20 @@
+profile:
+  test:
+    passWord: 123456
+    userName: LXH
+
+spring.datasource:
+    druid.url: jdbc:mysql://127.0.0.1:3306/test
+    druid.driver-class-name: com.mysql.jdbc.Driver
+    druid.username: root
+    druid.password: 123456
+    druid.initial-size: 30
+    druid.max-active: 100
+    druid.min-idle: 30
+    druid.max-wait: 30000
+    druid.pool-prepared-statements: false
+    druid.max-pool-prepared-statement-per-connection-size: 20
+    druid.validation-query: SELECT 'x'
+    druid.time-between-eviction-runs-millis: 60000
+    druid.min-evictable-idle-time-millis: 300000
+    druid.filters: stat,config

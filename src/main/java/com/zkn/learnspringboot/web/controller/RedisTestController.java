@@ -1,5 +1,6 @@
 package com.zkn.learnspringboot.web.controller;
 
+import com.zkn.learnspringboot.domain.RestResponse;
 import com.zkn.learnspringboot.redis.RedisStringUtil;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import springfox.documentation.annotations.ApiIgnore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by zkn on 2016/8/15.
@@ -51,8 +55,9 @@ public class RedisTestController {
     @ApiImplicitParams(value = {
         @ApiImplicitParam(name = "key", value = "Redis中的键", required = true, dataType = "String", paramType = "query")
     })
-    public String getString(@RequestParam String key) {
-
-        return redisStringUtil.getString(key);
+    public RestResponse getString(@RequestParam String key) {
+        String string = redisStringUtil.getString(key);
+        System.out.println(string);
+        return RestResponse.success(string);
     }
 }

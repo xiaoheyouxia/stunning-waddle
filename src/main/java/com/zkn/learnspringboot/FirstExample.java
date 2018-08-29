@@ -2,10 +2,14 @@ package com.zkn.learnspringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableMBeanExport;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.jmx.support.RegistrationPolicy;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,8 +34,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @RestController
 @EnableAutoConfiguration
 @EnableScheduling
+@SpringBootApplication
+@ServletComponentScan
 //@ImportResource(locations = {"classpath:dubbo-provider.xml"})
 @ComponentScan("com.zkn.learnspringboot")
+@EnableMBeanExport(registration = RegistrationPolicy.IGNORE_EXISTING)
 @EnableSwagger2
 public class FirstExample implements EmbeddedServletContainerCustomizer {
 
